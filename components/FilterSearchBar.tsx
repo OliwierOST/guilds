@@ -7,7 +7,7 @@ import Autocomplete from "@mui/material/Autocomplete"
 interface FilterSearchBarProps {
   filterName: string
   handleFilter: (params: string) => void
-  searchClient: Object
+  searchClient: object
   filterOptions: string[]
   filterSelection: string
 }
