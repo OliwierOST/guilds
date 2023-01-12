@@ -8,7 +8,7 @@ interface CaseStudyProps {
   type: string
 }
 
-export function CaseStudy({ hero, type}: CaseStudyProps) {
+export function CaseStudy({ hero, type }: CaseStudyProps) {
   return (
     <Stack spacing={3} direction={{ lg: "row", xl: "row" }} alignItems="start">
       <CaseStudyInfo type={type} hero={hero} />

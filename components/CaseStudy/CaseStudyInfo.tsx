@@ -19,7 +19,9 @@ export function CaseStudyInfo({ hero, type }: CaseStudyInfoProps) {
         <Typography variant="body1" fontWeight={600} color="primary.main">
           Case study
         </Typography>
-        <Typography variant="h3">About the {type=='team'? 'team' : 'quest'} leader</Typography>
+        <Typography variant="h3">
+          About the {type == "team" ? "team" : "quest"} leader
+        </Typography>
       </Stack>
       <Divider />
       <Typography color="text.secondary">{hero?.bio}</Typography>
