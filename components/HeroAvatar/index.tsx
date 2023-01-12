@@ -41,7 +41,7 @@ export function HeroAvatar({ hero, size }: HeroAvatarProps) {
 
   return (
     <Stack position="relative">
-      <HeroImage storagePath={hero.profilePicture} {...avatarSize} />
+      <HeroImage storagePath={`general/${hero.profilePicture}`} {...avatarSize} />
       <Stack
         sx={{
           position: "absolute",
