@@ -1,8 +1,7 @@
 import { useFirestore, useFirestoreCollectionData } from "reactfire"
 import { collection, query } from "firebase/firestore"
 import { Bid as BidType } from "types/quest"
-import {UserBidCard} from '../components/UserCards'
-
+import { UserBidCard } from "../components/UserCards"
 
 export function Bids({ path }): JSX.Element {
   const firestore = useFirestore()

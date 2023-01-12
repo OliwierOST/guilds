@@ -7,7 +7,6 @@ import { Bid } from "types/quest"
 import { useFirestore, useFirestoreDocData } from "reactfire"
 import { doc } from "firebase/firestore"
 
-
 const Heading = styled(Typography)({
   color: "#101828",
   fontSize: "1.125rem",
@@ -149,23 +148,25 @@ export function MediumUserCard({
   )
 }
 
-export function UserBidCard({
-value
-}: UserBidCardProps) {
-
+export function UserBidCard({ value }: UserBidCardProps) {
   const firestore = useFirestore()
-  const heroQuery = doc(firestore, 'heroes',value.bidderId )
+  const heroQuery = doc(firestore, "heroes", value.bidderId)
   const { status, data: hero } = useFirestoreDocData(heroQuery)
 
-  if (status === 'loading') {
-    return <span>loading...</span>;
+  if (status === "loading") {
+    return <span>loading...</span>
   }
 
   return (
-    <Stack sx={{maxWidth:'330px'}}>
-      <Avatar src={hero.profilePicture} sx={{ width: 80, height: 80, m:1, mb:2 }} />
+    <Stack sx={{ maxWidth: "330px" }}>
+      <Avatar
+        src={hero.profilePicture}
+        sx={{ width: 80, height: 80, m: 1, mb: 2 }}
+      />
       <Stack>
-        <Heading>{hero.name.first} {hero.name.last}</Heading>
+        <Heading>
+          {hero.name.first} {hero.name.last}
+        </Heading>
         <Typography
           sx={{
             fontWeight: 400,
@@ -188,14 +189,14 @@ value
           {/*TODO - add tagline as a required field in hero data*/}
           Former co-founder of Opendoor. Early staff at Spotify and Clearbit.
         </Typography>
-        <Stack flexDirection="row" sx={{ mb: 2, mt:1 }}>
+        <Stack flexDirection="row" sx={{ mb: 2, mt: 1 }}>
           <Box sx={{ mr: 2 }}>
-            <Link href={'link'}>
+            <Link href={"link"}>
               <Image src="/twitter.svg" alt="Twitter" width={20} height={20} />
             </Link>
           </Box>
           <Box sx={{ mr: 2 }}>
-            <Link href={'link'}>
+            <Link href={"link"}>
               <Image
                 src="/linkedin.svg"
                 alt="LinkedIn"
@@ -205,7 +206,7 @@ value
             </Link>
           </Box>
           <Box sx={{ mr: 2 }}>
-            <Link href={'link'}>
+            <Link href={"link"}>
               <Image
                 src="/instagram.svg"
                 alt="Instagram"
