@@ -20,7 +20,7 @@ export function CaseStudyInfo({ hero, type }: CaseStudyInfoProps) {
           Case study
         </Typography>
         <Typography variant="h3">
-          About the {type == "team" ? "team" : "quest"} leader
+          About the {type == "team" ? "team leader" : "quest creator"}
         </Typography>
       </Stack>
       <Divider />
