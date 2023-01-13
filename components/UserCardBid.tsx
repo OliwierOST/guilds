@@ -4,7 +4,7 @@ import Image from "next/image"
 import {
   Stack,
   Typography,
-  useMediaQuery,
+  CircularProgress,
   Box,
   Avatar,
   Grid,
@@ -29,8 +29,8 @@ export function UserCardBid({ value }: UserCardBidProps) {
   const heroQuery = doc(firestore, "heroes", value.bidderId)
   const { status, data: hero } = useFirestoreDocData(heroQuery)
 
-  if (status === "loading") {
-    return <span>loading...</span>
+  if (!hero) {
+    return <CircularProgress />
   }
 
   return (

@@ -1,7 +1,14 @@
 import Link from "next/link"
 import React, { useState, useEffect } from "react"
 import styled from "@emotion/styled"
-import { Button, Stack, Typography, Grid } from "@mui/material"
+import {
+  Button,
+  Stack,
+  Typography,
+  Grid,
+  CircularProgress,
+  Box,
+} from "@mui/material"
 import { useFirestore, useFirestoreCollectionData } from "reactfire"
 import { collection, query } from "firebase/firestore"
 import { Bids } from "../components/Bids"
@@ -22,22 +29,16 @@ export function CurrentBids({ path }: CurrentBidsProps) {
   const [highest, setHighest] = useState(0)
 
   useEffect(() => {
-    if (bids.length > 0) {
-      let min = Number(bids[0].amount)
-      let max = Number(bids[0].amount)
-
-      for (let i = 0; i < bids.length; i++) {
-        if (Number(bids[i].amount) < min) {
-          min = Number(bids[i].amount)
-        }
-        if (Number(bids[i].amount > max)) {
-          max = Number(bids[i].amount)
-        }
-      }
-      setLowest(min)
-      setHighest(max)
+    if (bids?.length > 0) {
+      const bidAmounts = bids?.map((bid) => Number(bid.amount))
+      setLowest(Math.min(...bidAmounts))
+      setHighest(Math.max(...bidAmounts))
     }
   }, [status])
+
+  if (!bids) {
+    return <CircularProgress />
+  }
 
   return (
     <Stack
@@ -60,9 +61,12 @@ export function CurrentBids({ path }: CurrentBidsProps) {
             <Stack display="flex" flexDirection="row" sx={{ pb: 3 }}>
               <Typography display="inline" color="text.secondary">
                 The best competitor price is currently{" "}
-                <span style={{ color: "#498553", fontWeight: 600 }}>
+                <Box
+                  component="span"
+                  style={{ color: "#498553", fontWeight: 600 }}
+                >
                   £{highest}.
-                </span>
+                </Box>
               </Typography>
             </Stack>
             <Stack direction="row" spacing={2}>

@@ -3,7 +3,7 @@ import { GreenButton } from "components/GreenButton"
 import { WhiteButton } from "components/WhiteButton"
 import Link from "next/link"
 
-export default function BackToSearch() {
+export function BackToSearch() {
   return (
     <Stack
       height="12rem"
