@@ -17,7 +17,7 @@ import {
 import { useSigninCheck } from "reactfire"
 import styled from "@emotion/styled"
 import { useTheme } from "@mui/material/styles"
-import { MediumUserCard } from "./UserCards"
+import { MediumUserCard } from "./UserProfileCards"
 
 const BoldText = styled(Typography)({
   color: "#101828",
