@@ -62,7 +62,7 @@ export function IndividualQuestBanner({
                 borderRadius: "16px",
               }}
             >
-              @yoniaibi holds the top bid
+              {topBid.userName} holds the top bid
             </Typography>
             <Typography
               display="inline"
@@ -139,10 +139,7 @@ export function IndividualQuestBanner({
           </CaseStudyLink>
         </Stack>
       </Stack>
-      <QuestImage
-        storagePath={`quests/${"1200px-Calico_tabby_cat_-_Savannah.jpeg"}`}
-        alt=""
-      />
+      <QuestImage storagePath={`quests/${quest?.image}`} alt="" />
     </Stack>
   )
 }
