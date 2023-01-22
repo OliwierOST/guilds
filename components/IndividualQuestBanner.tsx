@@ -139,7 +139,10 @@ export function IndividualQuestBanner({
           </CaseStudyLink>
         </Stack>
       </Stack>
-      <QuestImage storagePath={`quests/${quest?.image}`} alt={`${quest?.title} quest image`} />
+      <QuestImage
+        storagePath={`quests/${quest?.image}`}
+        alt={`${quest?.title} quest image`}
+      />
     </Stack>
   )
 }
