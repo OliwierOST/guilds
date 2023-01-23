@@ -67,14 +67,14 @@ export function IndividualQuestBanner({
                 borderRadius: "16px",
               }}
             >
-              Yoni holds the top bid
+              {topBid?.userName} holds the top bid
             </Typography>
             <Typography
               display="inline"
               color="#B54708"
               sx={{ p: 0.5, ml: 1, fontSize: "0.75rem", fontWeight: "500" }}
             >
-              £1500
+              {topBid?.amount}
             </Typography>
           </Box>
           <Typography variant="h3" fontSize={"3.75rem"}>
