@@ -11,18 +11,18 @@ export enum Tag {
 }
 
 export interface Quest {
-  id: UUID
-  creatorId: UUID
-  reward: string
-  title: string
-  description: string
-  tags: Tag[]
+  id?: UUID
+  creatorId?: UUID
+  reward?: string
+  title?: string
+  description?: string
+  tags?: Tag[]
   image?: URL
   bidders?: UUID[]
-  status: string
-  createdAt: Date
-  summary: string
-  level: number
+  status?: string
+  createdAt?: Date
+  summary?: string
+  level?: number
 }
 
 export interface Bid {
