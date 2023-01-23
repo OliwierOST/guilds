@@ -145,7 +145,7 @@ export function IndividualQuestBanner({
         </Stack>
       </Stack>
       <QuestImage
-        storagePath={"heroes/hero1.jpeg"}
+        storagePath={`quests/${quest?.image}`}
         alt={`${quest?.title} quest image`}
       />
     </Stack>
