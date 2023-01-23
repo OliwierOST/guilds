@@ -11,6 +11,7 @@ export function BackToSearch() {
       borderRadius="1.5rem"
       justifyContent="center"
       px="5rem"
+      sx={{ my: 15 }}
       spacing={1}
     >
       <Stack direction="row" justifyContent="space-between">

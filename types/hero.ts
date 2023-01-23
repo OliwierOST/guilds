@@ -7,8 +7,8 @@ export interface Hero {
   email: Email // only readable by signed in users
   name: Name
   location: Location
-
-  bio?: string
+  userName: string
+  bio: string
   twitter?: URL
   linkedin?: URL
   website?: URL
@@ -19,6 +19,8 @@ export interface Hero {
   rating?: number
   isMentor?: boolean
   mentor?: Mentor
+  xp?: string
+  level?: string
 }
 
 export type Mentor = {

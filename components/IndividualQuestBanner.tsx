@@ -17,8 +17,8 @@ interface IndividualQuestBannerProps {
 
 const QuestImage = styled(StorageImage)({
   objectFit: "cover",
-  maxWidth: 460,
-  maxHeight: 540,
+  maxWidth: 510,
+  maxHeight: 590,
   p: 20,
   aspectRatio: "7/8",
 })
@@ -38,7 +38,12 @@ export function IndividualQuestBanner({
   const topBid = topBids?.[0]
 
   return (
-    <Stack spacing={3} direction={{ lg: "row", xl: "row" }} alignItems="start">
+    <Stack
+      spacing={3}
+      direction={{ lg: "row", xl: "row" }}
+      sx={{ my: 5 }}
+      alignItems="center"
+    >
       <Stack width={576} mb={{ xs: "2rem", sm: "2rem", md: "2rem" }}>
         <Stack spacing={2} mb="2rem">
           <Box
@@ -62,14 +67,14 @@ export function IndividualQuestBanner({
                 borderRadius: "16px",
               }}
             >
-              {topBid.userName} holds the top bid
+              Yoni holds the top bid
             </Typography>
             <Typography
               display="inline"
               color="#B54708"
               sx={{ p: 0.5, ml: 1, fontSize: "0.75rem", fontWeight: "500" }}
             >
-              {topBid?.amount}
+              £1500
             </Typography>
           </Box>
           <Typography variant="h3" fontSize={"3.75rem"}>
@@ -84,7 +89,7 @@ export function IndividualQuestBanner({
             lineHeight: "1.875rem",
           }}
         >
-          {quest?.description}
+          {quest?.summary}
         </Typography>
         <Stack
           display="flex"
@@ -113,7 +118,7 @@ export function IndividualQuestBanner({
           </Stack>
         </Stack>
         <Stack direction="row" spacing={2}>
-          <CaseStudyLink href="#">
+          <CaseStudyLink href="#about-section">
             <Button
               variant="outlined"
               sx={{
@@ -126,7 +131,7 @@ export function IndividualQuestBanner({
               <Typography textTransform="none">More information</Typography>
             </Button>
           </CaseStudyLink>
-          <CaseStudyLink href="#">
+          <CaseStudyLink href="#current-bids-section">
             <Button
               variant="contained"
               sx={{
@@ -140,7 +145,7 @@ export function IndividualQuestBanner({
         </Stack>
       </Stack>
       <QuestImage
-        storagePath={`quests/${quest?.image}`}
+        storagePath={"heroes/hero1.jpeg"}
         alt={`${quest?.title} quest image`}
       />
     </Stack>

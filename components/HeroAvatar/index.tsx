@@ -42,7 +42,7 @@ export function HeroAvatar({ hero, size }: HeroAvatarProps) {
   return (
     <Stack position="relative">
       <HeroImage
-        storagePath={`general/${hero.profilePicture}`}
+        storagePath={`general/${hero?.profilePicture}`}
         {...avatarSize}
       />
       <Stack
@@ -68,7 +68,7 @@ export function HeroAvatar({ hero, size }: HeroAvatarProps) {
           </Typography>
           <Rating
             name="read-only"
-            value={hero.rating}
+            value={hero?.rating}
             precision={0.5}
             readOnly
             sx={{
