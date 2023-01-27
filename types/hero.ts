@@ -2,12 +2,12 @@ import { Quest, Bid } from "./quest"
 import { URL, Email, ISODateString, UUID } from "./common"
 
 export interface Hero {
-  id: string
-  profilePicture: URL
-  email: Email // only readable by signed in users
-  name: Name
-  location: Location
-
+  id?: string
+  profilePicture?: URL
+  email?: Email // only readable by signed in users
+  name?: Name
+  location?: Location
+  userName?: string
   bio?: string
   twitter?: URL
   linkedin?: URL
@@ -19,6 +19,8 @@ export interface Hero {
   rating?: number
   isMentor?: boolean
   mentor?: Mentor
+  xp?: string
+  level?: string
 }
 
 export type Mentor = {

@@ -1,5 +1,6 @@
-import { TextField, Stack, Typography, Container, Slider } from "@mui/material"
+import { Typography, Container, Slider } from "@mui/material"
 import styled from "@emotion/styled"
+import { Hero } from "../types/hero"
 
 const XpBar = styled(Slider)(() => ({
   "& .MuiSlider-thumb": {
@@ -15,11 +16,11 @@ const XpBar = styled(Slider)(() => ({
 }))
 
 interface LevelBarProps {
-  level: string
-  xp: string
+  hero: Hero
 }
 
-export function LevelBar({ level, xp }: LevelBarProps) {
+export function LevelBar({ hero }: LevelBarProps) {
+  console.log(hero.xp)
   return (
     <Container
       sx={{
@@ -27,16 +28,16 @@ export function LevelBar({ level, xp }: LevelBarProps) {
         flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "center",
-        m: 5,
+        my: 15,
       }}
     >
       <Typography variant="body1" fontWeight={600} color="primary.main">
-        You are currently level {level}
+        You are currently level {hero?.level}
       </Typography>
       <Typography variant="h3" sx={{ mt: 1 }}>
-        {xp}XP
+        {hero?.xp}XP
       </Typography>
-      <XpBar disabled defaultValue={[0, Number(level)]} sx={{ mt: 2 }} />
+      <XpBar disabled defaultValue={[0, Number(hero.xp)]} sx={{ mt: 2 }} />
     </Container>
   )
 }

@@ -11,19 +11,16 @@ export function AboutGig({ quest }: QuestProps) {
   const isMedium = useMediaQuery(theme.breakpoints.down("lg"))
 
   return (
-    <Stack spacing={4} alignItems="start">
+    <Stack spacing={4} alignItems="start" id="about-section" sx={{ my: 15 }}>
       <Stack spacing={3} p={isMedium ? "1.5rem" : "0"}>
         <Stack spacing={1}>
-          <Typography variant="body1" color=" primary.main" fontWeight="600">
+          <Typography variant="body1" fontWeight={600} color="primary.main">
             Level {quest.level} Quest
           </Typography>
           <Typography variant="h3" maxWidth="sm">
             About {quest.title}
           </Typography>
         </Stack>
-        <Typography variant="body1" color="text.secondary" maxWidth="sm">
-          {quest.summary}
-        </Typography>
       </Stack>
       <Typography
         variant="body1"

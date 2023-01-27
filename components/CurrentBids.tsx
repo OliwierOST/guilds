@@ -12,15 +12,17 @@ import {
 import { useFirestore, useFirestoreCollectionData } from "reactfire"
 import { collection, query } from "firebase/firestore"
 import { Bids } from "../components/Bids"
+import { Quest } from "../types/quest"
 
 interface CurrentBidsProps {
   path: string
+  quest: Quest
 }
 const BidsLink = styled(Link)`
   text-decoration: none;
 `
 
-export function CurrentBids({ path }: CurrentBidsProps) {
+export function CurrentBids({ path, quest }: CurrentBidsProps) {
   const firestore = useFirestore()
   const questsQuery = query(collection(firestore, path))
   const { status, data: bids } = useFirestoreCollectionData(questsQuery)
@@ -43,8 +45,9 @@ export function CurrentBids({ path }: CurrentBidsProps) {
   return (
     <Stack
       direction={{ lg: "row", xl: "row" }}
-      sx={{ mt: 5, mb: 5, ml: 5 }}
+      sx={{ my: 15 }}
       alignItems="start"
+      id="current-bids-section"
     >
       <Grid container spacing={5}>
         <Grid item md={4}>
