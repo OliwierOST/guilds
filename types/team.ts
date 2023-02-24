@@ -18,26 +18,26 @@ export enum Industry {
 }
 
 export interface Team {
-  id: UUID
-  creatorId: UUID
-  title: string
-  description: string
-  highlight: string
-  industry: Industry
+  id?: UUID
+  creatorId?: UUID
+  title?: string
+  description?: string
+  highlight?: string
+  industry?: Industry
   image?: URL
-  timeEstimate: string
-  bidders: UUID[]
-  members: UUID[]
-  roleCategories: RoleCategory[]
-  createdAt: Date
+  timeEstimate?: string
+  bidders?: UUID[]
+  members?: UUID[]
+  roleCategories?: RoleCategory[]
+  createdAt?: Date
 }
 
 export interface Role {
-  id: UUID
-  title: string
-  description: string
-  status: string
-  createdAt: Date
+  id?: UUID
+  title?: string
+  description?: string
+  status?: string
+  createdAt?: Date
   image?: URL
   memberId?: UUID
 }
