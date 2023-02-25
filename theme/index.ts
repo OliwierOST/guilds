@@ -30,7 +30,7 @@ export const lightThemeOptions: ThemeOptions = {
   palette: {
     mode: "light",
     primary: {
-      main: "#41764A",
+      main: "#C01048",
       light: "#D8E9DA",
     },
     secondary: {
