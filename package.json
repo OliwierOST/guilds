@@ -20,7 +20,7 @@
     "loadash": "^1.0.0",
     "next": "^13.0.0",
     "react": "^18.2.0",
-    "react-chartjs-2": "^5.0.1",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-firebaseui": "^6.0.0",
     "react-instantsearch-dom": "^6.32.1",
