@@ -63,8 +63,6 @@ export function Slider({
     }
   }
 
-  console.log(items)
-
   return (
     <Stack spacing={4} alignItems="center" sx={{ overflow: "clip" }}>
       <Container>

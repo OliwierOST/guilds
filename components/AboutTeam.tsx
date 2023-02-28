@@ -2,11 +2,11 @@ import { Typography, Stack, useMediaQuery } from "@mui/material"
 import { Team } from "types/team"
 import { useTheme } from "@mui/material/styles"
 
-interface TeamProps {
+interface AboutTeamProps {
   team: Team
 }
 
-export function AboutTeam({ team }: TeamProps) {
+export function AboutTeam({ team }: AboutTeamProps) {
   const theme = useTheme()
   const isMedium = useMediaQuery(theme.breakpoints.down("lg"))
 
