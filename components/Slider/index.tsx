@@ -21,6 +21,7 @@ interface ReusableSliderProps {
   variant: "hero" | "team" | "quest" | "role"
   status: "loading" | "success" | "error"
   items: Hero[] | Team[] | Quest[] | RoleType[]
+  variantId: string
 }
 
 enum Status {
@@ -36,7 +37,12 @@ enum SliderVariant {
   Role = "role",
 }
 
-export function Slider({ items, status, variant }: ReusableSliderProps) {
+export function Slider({
+  items,
+  status,
+  variant,
+  variantId,
+}: ReusableSliderProps) {
   const [scrolledCard, setScrolledCard] = useState(0)
   const [mouseScrollDisabled, setMouseScrollDisabled] = useState(false)
   const featuredCardsRefs = useRef([])
@@ -53,7 +59,7 @@ export function Slider({ items, status, variant }: ReusableSliderProps) {
       case SliderVariant.Quest:
         return <LatestQuest quest={item as Quest} />
       case SliderVariant.Role:
-        return <Role role={item as RoleType} teamId={""} />
+        return <Role role={item as RoleType} teamId={variantId} />
     }
   }
 

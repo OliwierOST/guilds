@@ -26,7 +26,7 @@ export function TeamHit({ hit }: LatestTeamProps) {
           <Link
             href={{
               pathname: "/team",
-              query: { teamId: hit.id },
+              query: { tid: hit.id },
             }}
           >
             <Image
