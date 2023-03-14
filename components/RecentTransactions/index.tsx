@@ -18,11 +18,11 @@ export function RecentTransactions() {
     <Stack
       p={3}
       sx={{
-        maxWidth: "24rem",
         border: "1px solid",
         borderColor: (theme) => theme.palette.grey[200],
         borderRadius: "0.5rem",
         boxShadow: "0px 1px 3px 0px #1018281A",
+        flexGrow: 1,
       }}
     >
       <Typography pb={3} variant="h6">

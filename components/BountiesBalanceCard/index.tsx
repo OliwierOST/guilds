@@ -17,7 +17,9 @@ export function BountiesBalanceCard({
         borderColor: (theme) => theme.palette.grey[200],
         borderRadius: "0.5rem",
         flexGrow: 1,
+        flex: 1,
         height: "10rem",
+        boxShadow: "0px 1px 3px 0px #1018281A",
       }}
       justifyContent="space-around"
     >

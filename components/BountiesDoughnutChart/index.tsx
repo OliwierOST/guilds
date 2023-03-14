@@ -1,6 +1,6 @@
 import { Doughnut } from "react-chartjs-2"
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js"
-import { Box } from "@mui/material"
+import { Stack } from "@mui/material"
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
@@ -26,17 +26,18 @@ const options = {
 
 export function DoughnutChart() {
   return (
-    <Box
+    <Stack
       sx={{
         p: 2,
         border: "1px solid",
         borderColor: (theme) => theme.palette.grey[200],
         borderRadius: "0.5rem",
-        width: "10rem",
         height: "10rem",
+        alignItems: "center",
+        boxShadow: "0px 1px 3px 0px #1018281A",
       }}
     >
       <Doughnut data={data} options={options} />
-    </Box>
+    </Stack>
   )
 }

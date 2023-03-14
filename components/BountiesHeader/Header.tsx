@@ -1,5 +1,9 @@
 import { Stack, Typography } from "@mui/material"
-import { HeaderProps } from "."
+
+export interface HeaderProps {
+  title: string
+  caption: string
+}
 
 export function Header({ title, caption }: HeaderProps) {
   return (

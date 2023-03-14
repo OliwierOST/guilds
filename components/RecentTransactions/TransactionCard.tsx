@@ -23,7 +23,7 @@ export function TransactionCard({ transaction }: TransactionCardProps) {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row" spacing={2} width="100%">
             {user?.profilePicture ? (
               <Stack alignSelf="center">
                 <StorageImage
@@ -39,10 +39,19 @@ export function TransactionCard({ transaction }: TransactionCardProps) {
             ) : (
               <Avatar />
             )}
-            <Stack>
-              <Typography variant="body1">
-                {user?.name.first + " " + user?.name.last}
-              </Typography>
+            <Stack width="100%">
+              <Stack direction="row" justifyContent="space-between">
+                <Typography variant="body1">
+                  {user?.name.first + " " + user?.name.last}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color={transaction?.amount[0] == "-" ? "#D92D20" : "#039855"}
+                >
+                  {transaction?.amount}
+                </Typography>
+              </Stack>
+
               <Typography
                 variant="caption"
                 color={(theme) => theme.palette.grey[600]}
@@ -51,12 +60,6 @@ export function TransactionCard({ transaction }: TransactionCardProps) {
               </Typography>
             </Stack>
           </Stack>
-          <Typography
-            variant="body2"
-            color={transaction?.amount[0] == "-" ? "#D92D20" : "#039855"}
-          >
-            {transaction?.amount}
-          </Typography>
         </Stack>
       )}
 

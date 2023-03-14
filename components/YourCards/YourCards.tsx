@@ -20,13 +20,13 @@ const card = {
 
 export function YourCards() {
   const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"))
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
   return (
     <Stack
-      maxWidth="48rem"
       border="1px solid"
-      borderRadius="1.5rem"
+      borderRadius="0.5rem"
       borderColor={(theme) => theme.palette.grey[200]}
+      boxShadow="0px 1px 3px 0px #1018281A"
     >
       <Stack p={3} spacing={3}>
         <Stack

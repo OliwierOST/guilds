@@ -13,6 +13,7 @@ import { Box } from "@mui/material"
 import { ChartTitle } from "./Title"
 import { data } from "./data"
 import { monthTicks } from "./ticks"
+import { relative } from "path"
 
 Chart.register(
   CategoryScale,
@@ -32,7 +33,7 @@ export function BountiesGraph({ period }: BountiesGraphProps) {
   const options = {
     responsive: true,
     radius: 0,
-    aspectRatio: 3,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,
@@ -87,10 +88,13 @@ export function BountiesGraph({ period }: BountiesGraphProps) {
     <Box
       p={3}
       sx={{
-        maxWidth: "48rem",
         border: "1px solid",
         borderColor: (theme) => theme.palette.grey[200],
         borderRadius: "0.5rem",
+        position: "relative",
+        height: "20rem",
+        pb: "6rem",
+        boxShadow: "0px 1px 3px 0px #1018281A",
       }}
     >
       <ChartTitle />
